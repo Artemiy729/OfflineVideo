@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.native-host.command
+node_modules/
+.DS_Store
+dist/
+*.log
+.env
+.env.*
+playwright-report/
+test-results/

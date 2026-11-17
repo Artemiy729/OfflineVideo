@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OfflineVideo</title><link rel="icon" type="image/png" href="icons/icon-32.png"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<div class="app">
+  <header class="header">
+    <a class="brand" href="popup.html" aria-label="OfflineVideo home"><img class="brand-icon" src="icons/icon.svg" alt="" width="31" height="31"><span>Offline<span class="brand-light">Video</span></span></a>
+    <button id="check" class="connection" type="button" data-state="checking" title="Check connection"><span class="status-dot" aria-hidden="true"></span><span id="connection" class="sr-only">Connecting</span></button>
+  </header>
+  <main>
+    <section class="intro"><h1>Download a video</h1><p>Download videos from YouTube and other supported sites to watch offline.</p></section>
+    <form id="form">
+      <div class="field-heading"><label for="url">Video link</label><button type="button" class="quiet-button" id="use-tab">Use current tab <span aria-hidden="true">↙</span></button></div>
+      <div class="url-field"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 13 4-4m-6 6-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0m2 2 1-1a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0"/></svg><input id="url" type="url" placeholder="Paste a video URL" required spellcheck="false" autocomplete="off" aria-describedby="source-context"><button id="clear-url" type="button" aria-label="Clear link" title="Clear" hidden>×</button></div>
+      <p id="source-context" class="sr-only">YouTube and other video sites</p>
+      <fieldset class="quality"><legend>Quality</legend><div class="quality-options"><label><input type="radio" name="quality" value="720"><span><strong>720p</strong><small>Smaller file</small></span></label><label><input type="radio" name="quality" value="1080" checked><span><strong>1080p</strong><small>Recommended</small></span></label><label><input type="radio" name="quality" value="best"><span><strong>Best</strong><small>Highest quality</small></span></label></div></fieldset>
+      <div class="destination"><span class="folder-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7V5a1 1 0 0 1 1-1h5l2 3h9a1 1 0 0 1 1 1v11H3Z"/></svg></span><div class="folder-copy"><span class="folder-label">Save to</span><p id="destination" title="Download folder">Loading folder…</p></div><button type="button" class="folder-button" id="choose-folder" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a1 1 0 0 1 1-1h5l2 3h9a1 1 0 0 1 1 1v11H3Z"/></svg><span>Choose folder</span></button></div>
+      <p id="picker-status" class="inline-message" role="status" hidden></p>
+      <button id="download" class="download" type="submit" disabled><span id="download-label">Download video</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v13m-5-5 5 5 5-5M5 21h14"/></svg></button>
+    </form>
+    <p id="notice" class="inline-message" role="status" hidden></p>
+  </main>
+  <footer><button type="button" id="folder" class="folder-button open-folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a1 1 0 0 1 1-1h5l2 3h9a1 1 0 0 1 1 1v11H3Z"/></svg><span>Open download folder</span><svg class="external-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6m0-6-9 9M9 5H4v15h15v-5"/></svg></button></footer>
+</div>
+<script src="popup.js"></script>
+</body></html>

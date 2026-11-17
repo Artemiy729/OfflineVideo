@@ -1,0 +1,13 @@
+{
+  "name": "offlinevideo",
+  "version": "0.3.10",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/popup.test.cjs",
+    "check": "node --check extension/background.js && node --check extension/popup.js",
+    "icons": "node scripts/build-icons.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0"
+  }
+}
