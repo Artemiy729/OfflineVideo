@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const {chromium} = require('@playwright/test');
 const {pathToFileURL} = require('node:url');
 const path = require('node:path');
+const os = require('node:os');
 
 test('responsive form has no history; chooses quality and folder, reports completion transiently', async () => {
   const browser = await chromium.launch({headless: true});
@@ -40,7 +41,7 @@ test('responsive form has no history; chooses quality and folder, reports comple
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth), 400);
     await page.setViewportSize({width:400,height:600});
     assert.ok(await page.evaluate(() => document.body.scrollHeight <= 600), 'Default popup should fit without vertical scrolling');
-    await page.locator('body').screenshot({path:'/private/tmp/offlinevideo-balanced.png'});
+    await page.locator('body').screenshot({path:path.join(os.tmpdir(), 'offlinevideo-balanced.png')});
     await page.evaluate(() => document.documentElement.classList.add('full-page'));
     await page.setViewportSize({width: 420, height: 850});
     await page.locator('label').filter({has: page.locator('input[value="1080"]')}).click();
@@ -62,7 +63,7 @@ test('responsive form has no history; chooses quality and folder, reports comple
     await page.locator('#notice').evaluate(element => { element.hidden = true; });
     await page.locator('#clear-url').click();
     await page.locator('#destination').evaluate(element => { element.textContent = 'OfflineVideo'; element.title = 'Example download folder'; });
-    await page.locator('body').screenshot({path: process.env.OFFLINEVIDEO_PREVIEW_PATH || '/private/tmp/offlinevideo-redesign.png'});
+    await page.locator('body').screenshot({path: process.env.OFFLINEVIDEO_PREVIEW_PATH || path.join(os.tmpdir(), 'offlinevideo-redesign.png')});
     await page.evaluate(() => { window.offline = true; });
     await page.waitForFunction(() => document.getElementById('download').disabled);
     assert.match(await page.locator('#connection').textContent(), /Disconnected/);

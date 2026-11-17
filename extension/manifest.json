@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "OfflineVideo",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "Download videos from YouTube and other supported sites as MP4 files for offline viewing.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0k0sNdzTW7jMbdU9vIftFioXCmsgd6hQQyIprBMJP9ZdPlk+FIqjJaW4lznFA1Ku/9LY7ONdI1CyC2j0mBLjPrBK/USi6M28Iw2RKW3iVoJh+wxxU0gieuatUKt5TgnhSOAEZ71JsciFNTNPqdienATMIxHnqOAFWQsYd9t3pa60PyE5ZPkYvmyfR8k1N+TeUeUyf/G37xSxsLX5o6ROtrQSSIYlmhKU58r7wrSZcYKSb+bDKoGXg5P2HhFKX1gJrZLiADMBoID7C/07ykeuoWBojBnNjXrrb7BoWYA43/O1tWeH2qzIDeXNhAaiqGzQ9IdRVi8SRm6VsDq6LgjR1QIDAQAB",
   "permissions": [
